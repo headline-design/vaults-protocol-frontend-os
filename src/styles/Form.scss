@@ -1,0 +1,19 @@
+.algoAddress-input {
+        border: 1px solid rgba(241, 237, 237, 0.6);
+        box-sizing: border-box;
+        flex-grow: 1;
+        background: transparent;
+        border-radius: 34px;
+        padding: 16px;
+        display: flex;
+        margin-right: 16px;
+        width: 100%;
+        overflow-x: hidden;
+        text-overflow: ellipsis;
+        justify-content: center;
+        align-items: center;
+}
+
+button.button.tertiary {
+    width: 100%;
+}

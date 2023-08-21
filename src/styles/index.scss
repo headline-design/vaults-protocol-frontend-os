@@ -1,0 +1,37 @@
+@import "./mixins.scss";
+@import "./screens.scss";
+@import "./App.scss";
+@import "./button.scss";
+@import "./Form.scss";
+@import "./modal.scss";
+@import "./footer.scss";
+@import "./navbar.scss";
+@import "./PrivacyCard.scss";
+@import "./cards.scss";
+@import "./home.scss";
+@import "./partials.scss";
+@import "./table.scss";
+@import "./transaction.scss";
+@import "./filter.scss";
+@import "./input.scss";
+@import "./staking.scss";
+@import "./notifier.scss";
+@import "./connectionModal.scss";
+@import "./ThanksCard.scss";
+@import "./Countdown.scss";
+@import "./LaunchpadForm.scss";
+
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+  background: #1a1b20;
+  color: #ffffff;
+
+  p{
+    margin: 0;
+  }
+}
+

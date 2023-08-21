@@ -1,0 +1,129 @@
+@media (max-width: 500px) {
+    .package-card.package-card-info {
+        padding-left: 0px !important;
+        padding-right: 0px !important;
+        margin-top: unset !important;
+        background-color: rgb(26 27 32) !important;
+        box-shadow: none !important;
+    }
+    }
+
+
+.package-card.package-card-info.orange-bg {
+    width: 100%;
+    margin-top: 5vh;
+    min-height: 40vh;
+    padding: 2.5rem;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    background-color: rgba(48, 47, 47, 0.14);
+    box-sizing: border-box;
+    box-shadow: 0px 0px 17px rgb(0 0 0 / 8%);
+    border-radius: 6px;
+    position: relative;
+    flex-direction: column;
+}
+
+.info-header{
+    font-family: "Inter", sans-serif;
+    font-style: normal;
+    font-size: 1.5rem;
+    line-height: 1.875rem;
+    font-weight: 800;
+}
+
+.info-body {
+    order: 1;
+    font-family: "Inter", sans-serif;
+    font-style: normal;
+    font-size: 0.75rem;
+    line-height: 0.875rem;
+    font-weight: 500;
+    color: #D1D1D1;
+}
+
+p.info-subheader {
+    padding-bottom: 1rem;
+}
+
+.bd-content.ps-lg-4 > h1#content {
+    margin-top: 0px;
+    color: #fff;
+}
+
+.bd-content.ps-lg-4 >.h1, .bd-content.ps-lg-4 > h1 {
+    font-size: 2.5rem;
+    color: #fff;
+}
+
+.bd-content.ps-lg-4 > h2 {
+    font-size: 2rem;
+    color: #fff;
+}
+
+.bd-content.ps-lg-4 > h3 {
+    font-size: 1.3rem;
+    color: #fff;
+}
+
+.bd-content.ps-lg-4 > p {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.5;
+        margin-top: 0;
+        margin-bottom: 1rem;
+}
+
+nav#TableOfContents a {
+    color: #a19fff;
+}
+
+
+.bd-content.ps-lg-4 > a {
+ color: #7b78ff
+}
+
+nav#TableOfContents {
+    font-size: 18px;
+    line-height: 2rem;
+}
+
+p.bd-lead {
+    font-size: 1.5rem;
+    font-weight: 300;
+    line-height: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+strong.d-block.h6.my-2.pb-2.border-bottom {
+    font-size: 20px;
+    line-height: 2rem;
+}
+
+ul.footer-add-links > li > a {
+    color: #a19fff;
+    font-size: 14px;
+    line-height: 1.5rem;
+}
+
+a.AnchorLinks-module--link--1_JzY > li > a{
+    color: #a19fff;
+}
+
+h1#protocol-content {
+    font-size: 2.4rem;
+    color: #fff;
+}
+
+.bd-content.ps-lg-4 > h2 {
+    font-size: 2rem;
+    color: #fff;
+    line-height: 1.2;
+}
+
+h1#protocol-content {
+    font-size: 2.4rem;
+    color: #fff;
+    line-height: 1.2;
+}

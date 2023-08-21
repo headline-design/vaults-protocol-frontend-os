@@ -1,0 +1,39 @@
+
+.transactions{
+    padding: 3% 5% 0 5%;
+    .transaction-main{
+        margin-top: 5vh;
+        .header{
+            @include flex(row, nill, center);
+            .back-img{
+                margin-right: 1.5vw;
+                cursor: pointer;
+                @include screen("inbetween") {
+                    margin-right: 3vw;
+                }
+            }
+            .page-dets{
+                #topic{
+                    @include fonts(24, 30, 800);
+                    @include screen("inbetween") {
+                        @include fonts(18, 20, 800);
+                    }
+                }
+                #sub-topic{
+                    @include fonts(14, 17, 500);
+                    @include screen("inbetween") {
+                        @include fonts(12, 15, 500);
+                    }
+                }
+            }
+        }
+        .table-section{
+            margin-top: 5vh;
+        }
+    }
+}
+
+.transaction-main {
+    max-width: 1400px;
+    margin: 0 auto;
+}

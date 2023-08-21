@@ -1,0 +1,20 @@
+import abiManager from "abiManager";
+import createContractPreConnect from "../contract-creator-pre-connect";
+
+async function GetTotalStakedFromContract() {
+    try {
+       
+        const Contract = await createContractPreConnect(abiManager.XSTAKING, "0x3d4D0699C4Df1539Fdc42C6F9594A478c6929051");
+      
+        return  await Contract.methods.totalStakedToken().call();
+
+    } catch (err :any) {
+        console.log(err);
+        return {
+            status: false,
+            message: err.message
+        };
+    }
+}
+
+export default GetTotalStakedFromContract;

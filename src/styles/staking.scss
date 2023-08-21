@@ -1,0 +1,130 @@
+
+.staking{
+    width: 100%;
+    height: 100%;
+    @include flex(row, nill, nill);
+    @include screen("inbetween") {
+        flex-direction: column;
+    }
+    .stake-title{
+        @include fonts(18, 22, 500);
+        margin-bottom: 5vh;
+    }
+
+    .stake-left{
+        width: 50%;
+        border-right: 1px solid rgba(216, 216, 216, 0.05);
+        @include screen("inbetween") {
+            width: 100%;
+            padding: 5%;
+            box-sizing: border-box;
+            border-right: none;
+        }
+        .left-main{
+            padding: 1.5vw 2vw;
+            box-sizing: border-box;
+        }
+        
+    }
+
+
+    .percentages {
+        margin: 1.5rem 20% 1rem;
+        display: flex;
+        -webkit-box-align: center;
+        align-items: center;
+        -webkit-box-pack: justify;
+        justify-content: space-between;
+    }
+
+    .activeValueSelection{
+        border: 2px solid #7b78ff;
+    border-radius: 40.8111px;
+    padding: 0.3rem 0.7rem;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    color: #7b78ff;
+    }
+    .notActiveValueSelection{
+        font-style: normal;
+        font-weight: 600;
+        font-size: 14px;
+        color: #7b78ff;
+        cursor: pointer;
+    }
+
+    .stake-right{
+        width: 50%;
+        padding: 1.5vw 2vw 3vw 2vw;
+        box-sizing: border-box;
+        @include screen("inbetween") {
+            width: 100%;
+            padding: 5%;
+            box-sizing: border-box;
+        }
+        .box{
+            margin-top: 3vh;
+            min-height: 20vh;
+            margin-bottom: 3vh;
+            @include flex(row, nill, nill);
+            .rings{
+                margin-right: 2vw;
+            }
+            .items-main{
+                width: 100%;
+                min-height: 100%;
+                @include flex(column, space-between, nill);
+                .row{
+                    // margin-bottom: 5vh;
+                    @include flex(row, space-between, center);
+                    .item{
+                        color: #B1AFCD;
+                    }
+                    .val{
+                        color: rgba(177, 175, 205, 0.5);
+                    }
+                }
+            }
+        }
+        .row-box{
+            @include flex(row, space-between, center);
+            margin-bottom: 3vh;
+            #item{
+                color: #B1AFCD;
+            }
+            #val{
+                color: #00d18c;
+            }
+        }
+        .check{
+            @include flex(row, nill, center);
+            margin: 5vh 0;
+            .check-img{
+                margin-right: 1vw;
+                cursor: pointer;
+            }
+            #agree{
+                color: rgba(177, 175, 205, 0.5);
+            }
+        }
+    }
+}
+
+@media(max-width: 900px){
+.staking .stake-right .box .rings {
+    margin-right: 5vw !important;
+}
+}
+
+@media(max-width: 500px){
+    .staking .stake-right .box .rings {
+        margin-right: 7vw !important;
+    }
+    }
+
+    @media(min-width: 850px){
+    .staking .activeValueSelection {
+        padding: 0.6rem 1.4rem;
+    }
+}

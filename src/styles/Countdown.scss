@@ -1,0 +1,79 @@
+p.val.val-clock {
+    white-space: nowrap;
+    font-family: "Inter", sans-serif;
+    font-style: normal;
+    font-size: 1.125rem;
+    line-height: 1.5625rem;
+    font-weight: bold;
+}
+
+.step-2.step-countdown {
+    display: flex;
+    align-items: center;
+}
+
+
+.left-2.left-countdown {
+    grid-gap: 25px;
+}
+
+.step-2.step-countdown {
+    display: flex;
+    justify-content: space-between;
+}
+
+.pointer.countdown-pointer {
+    white-space: nowrap;
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    cursor: pointer;
+    margin-right: 2.5vw !important;
+    border-style: solid;
+    padding: 12px;
+    border-color: grey;
+    border-radius: 12px;
+}
+
+p.label.countdown-label {
+    margin-right: 0.5vw;
+    font-family: "Inter", sans-serif;
+    font-style: normal;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    font-weight: 500;
+}
+
+@media screen and (max-width: 767.99px){
+    .pointer.countdown-pointer  {
+    align-self: flex-start;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.step-2.step-countdown {
+    width: 100%;
+    margin-bottom: 8vh;
+    padding: 5vw;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+}
+
+.left-2.left-countdown {
+    width: 100%;
+}
+
+
+
+.right-2.countdown-right {
+    width: 100%;
+}
+
+.left-2.left-countdown {
+    margin-bottom: 1rem;
+}
+}

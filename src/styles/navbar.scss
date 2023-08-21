@@ -1,0 +1,37 @@
+
+nav {
+    width: 100%;
+    position: relative;
+    @include flex(row, space-between, center);
+    // border: 1px solid blue;
+    @include screen("inbetween") {
+        padding: 2% 0%;
+        box-sizing: border-box;
+        flex-wrap: wrap !important;
+		width: 100%;
+    }
+    .logo{
+        cursor: pointer;
+    }
+}
+
+
+@media (max-width: 390px){
+	.nav{
+		
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+	}
+    }
+
+    nav {
+        max-width: 1400px;
+        margin: 0 auto;
+    }
+
+    img.logo {
+        width: 180px;
+    }

@@ -1,0 +1,153 @@
+
+
+.button {
+  padding: 2px;
+  cursor: pointer;
+  background: #687dfd;
+  border-radius: 30px;
+  @include flex(column, center, center);
+  border: none;
+  outline: none;
+  @include screen("inbetween") {
+  }
+  p{
+    padding: 1.3vh 3vw;
+    color: #ffff;
+    font-style: normal;
+    @include fonts(18, 23, bold);
+    text-align: center;
+    margin: 0;
+    @include screen("inbetween") {
+      @include fonts(14, 20, bold);
+    }
+  }
+  @include screen("inbetween") {
+    min-width: 0;
+  }
+  &.stake-btn{
+    width: 80%;
+    margin: 0 auto;
+    @include fonts(14, 17, 500);
+  }
+  
+  //// secondary /////
+  &.secondary{
+    box-shadow: none;
+    @include screen("inbetween") {
+    }
+    .btn-inside{
+      width: 100%;
+      // background-color: white;
+      border-radius: 30px;
+      @include flex(column, center, center);
+      p{
+        padding: 1.5vh 3vw;
+        margin: 0;
+        @include fonts(18, 23, bold);
+        background: linear-gradient(44.25deg, #E8433D 25.64%, #6966fb 53.43%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        @include screen("inbetween") {
+          font-size: 0.8rem;
+          padding: 1vh 5vh;
+        }
+      }
+    }
+  }
+
+  ////// tertiary buttons //////// 
+  &.tertiary{
+    border: 2px solid #FFFFFF;
+    box-sizing: border-box;
+    border-radius: 28px;
+    background: transparent;
+    background-color: transparent;
+    padding: 0;
+    .btn-inside{
+      // background-color: #ffff;
+      padding: 0;
+      border-radius: 28px;
+      p{
+        @include fonts(14, 18, bold);
+        // color: #1F1F20;
+        // background: #ffff;
+        padding: 1.3vh 2vw;
+        /// white-space: nowrap;
+        border-radius: 28px;
+        margin: 0;
+      }
+    }
+    @include screen("inbetween") {
+      .btn-inside{
+        p{
+          padding: 1vh 2vw;
+          @include fonts(11, 13, bold);
+        }
+      }
+    }
+    &.card-btn{
+      justify-self: center;
+      margin: 0 auto;
+      @include screen("inbetween") {
+        width: 100%;
+      }
+    }
+  }
+}
+
+//// capsule btn ////////
+.capsule-btn{
+  // min-width: 15vw;
+  min-width: 18%;
+  position: relative;
+  @include screen("inbetween") {
+    min-width: 50%;
+  }
+
+  .left-capsule{
+    // background: linear-gradient(44.25deg, #E8433D 25.64%, #6966fb 53.43%);
+    background: rgba(255, 255, 255, 0.14);
+    color: #FFFFFF;
+    // width: 9vw;
+    width: 60%;
+    padding: 1.3vh 1vw 1.3vh 1vw;
+    box-sizing: border-box;
+    border-radius: 60px;
+    @include fonts(13, 16, bold);
+    cursor: pointer;
+    @include screen("inbetween") {
+      @include fonts(10, 16, bold);
+      padding-left: 5%;
+    }
+  }
+  .right-capsule{
+    background: #5A5F6E;
+    color: #FFFFFF;
+    // width: 9vw;
+    width: 55%;
+    padding: 1.3vh 1vw 1.3vh 1vw;
+    box-sizing: border-box;
+    border-radius: 60px;
+    z-index: 50;
+    position: absolute;
+    right: 0;
+    top: 0;
+    left: 45%;
+    @include fonts(13, 16, bold);
+    cursor: pointer;
+    text-align: center;
+    @include screen("inbetween") {
+      @include fonts(10, 16, bold);
+      // padding-left: 5%;
+    }
+  }
+}
+
+
+.connect-wallet {
+  @include flex(row, space-between, center);
+  .wallet-img {
+    margin-right: 1vw;
+  }
+}
+
