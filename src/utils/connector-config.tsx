@@ -11,7 +11,7 @@ const connectors: Config[] = [
         connectorId: ConnectorNames.Injected,
     },
     {
-        title: 'WalletConnect',
+        title: 'PeraWallet',
         icon: 'walletconnect',
         image: WalletConnect,
         connectorId: ConnectorNames.Injected,

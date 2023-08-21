@@ -32,7 +32,7 @@ export const ConnectWalletForm = ({close, toggleWallet}: Props) => {
             >
                 <img src="/icons/metamask.svg" alt="wallet" id="wallet-img" />
                 <div className="details">
-                    <p className="text-primary" id="wallet">WalletConnect</p>
+                    <p className="text-primary" id="wallet">Pera</p>
                     <p className="text-secondary" id="info">
                         Scan with WalletConnect to connect
                     </p>

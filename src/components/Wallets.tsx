@@ -89,7 +89,7 @@ const Wallets: FC<WalletProps> = ({ setOpen }) => {
 				case "AlgoSigner":
 					img = algoSigner
 					break;
-				case "WalletConnect":
+				case "PeraWallet":
 					img = walletConnect
 					break;
 				default:
