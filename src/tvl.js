@@ -62,7 +62,7 @@ async function tvl() {
 
   let addresses = txnAddresses
 
-  let url = "https://indexer.algoexplorerapi.io"
+  let url = "https://mainnet-idx.algonode.cloud"
 
   for (let i = 0; i < addresses.length; i++) {
 

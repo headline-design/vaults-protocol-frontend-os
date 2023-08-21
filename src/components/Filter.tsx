@@ -6,7 +6,7 @@ interface Props {
     value?: string | number;
     name?: string;
     onChange?: (e: any) => void;
-    label?: string | HTMLElement | JSX.Element;
+    label?: React.ReactNode;
     asterik?: boolean;
     subLabel?: string;
     id?: string;
@@ -22,21 +22,21 @@ export const Filter = (
         <div className={`filter ${className && className}`} >
             {/* {label && <label >{label}</label>} */}
             <div className="label-box">
-                    {label && 
+                    {label &&
                         <div className={`text-primary label ${className && className}`} >
-                            {label} 
+                            {label}
                             <span className={asterik ? "asterik" : "hide"}> * </span>
                         </div>
                     }
-                    {subLabel && 
+                    {subLabel &&
                         <p className={`sub-label ${className && className}`}>
                             {subLabel}
-                        </p> 
+                        </p>
                     }
                 </div>
-            <select 
+            <select
                 className={`bg-primary select ${className && className}`}
-                name={name} id={id} 
+                name={name} id={id}
                 onChange={onChange}
             >
                 {options?.map((item: any, i: any) => (

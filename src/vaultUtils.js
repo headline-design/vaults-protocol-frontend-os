@@ -113,8 +113,8 @@ const optIn = async (appid) => {
 
 
 const clear = async () => {
-    let transServer = "https://node.testnet.algoexplorerapi.io/v2/transactions"
-    if (Pipeline.main === true) { transServer = "https://node.algoexplorerapi.io/v2/transactions" }
+    let transServer = "https://testnet-api.algonode.cloud/v2/transactions"
+    if (Pipeline.main === true) { transServer = "https://mainnet-api.algonode.cloud/v2/transactions" }
     let params = await Pipeline.getParams()
     let appId = parseInt(document.getElementById("appid").value)
     let txn = algosdk.makeApplicationClearStateTxn(Pipeline.address, params, appId)
@@ -132,10 +132,10 @@ const readLocalState = async (net, addr, appIndex, pool = false) => {
         let url = ""
 
         if (!net) {
-            url = "https://indexer.testnet.algoexplorerapi.io"
+            url = "https://testnet-idx.algonode.cloud"
         }
         else {
-            url = "https://indexer.algoexplorerapi.io"
+            url = "https://mainnet-idx.algonode.cloud"
         }
 
         let appData = await fetch(url + '/v2/accounts/' + addr + '?include-all=false&assets-limit=50')
@@ -296,10 +296,10 @@ const getHDLValue = async () => {
     let usdc = 31566704
 
     if (!Pipeline.main) {
-        url = "https://indexer.testnet.algoexplorerapi.io"
+        url = "https://testnet-idx.algonode.cloud"
     }
     else {
-        url = "https://indexer.algoexplorerapi.io"
+        url = "https://mainnet-idx.algonode.cloud"
     }
 
     let appData = await fetch(url + '/v2/accounts/' + poolAddress)
@@ -334,10 +334,10 @@ const keyCheck = async (calculator = false) => {
     let url = ""
 
     if (!Pipeline.main) {
-        url = "https://indexer.testnet.algoexplorerapi.io"
+        url = "https://testnet-idx.algonode.cloud"
     }
     else {
-        url = "https://indexer.algoexplorerapi.io"
+        url = "https://mainnet-idx.algonode.cloud"
     }
 
     let appData = await fetch(url + '/v2/accounts/' + addresses[i])
