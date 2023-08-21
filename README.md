@@ -11,7 +11,7 @@ This project includes everything you need to get started with Vaults Protocol on
 Follow these step-by-step instructions to get started:
 (Coming soon!)
 
-1. **Deploy the Algorand Smart Contract**: Detailed instructions on how to deploy the Algorand Smart Contract.
+1. **Deploy the Algorand Smart Contract**: Detailed instructions on how to deploy the Algorand Smart Contract. Contract code can be found [here](./public/teal/contract.txt). Please modify and deploy via Vault Deployer.
 2. **Distribute the Vault Tokens**: A comprehensive guide on distributing Vault Tokens among various stakeholders.
 3. **Deploy the React App**: Instructions on how to deploy the React App in your local environment.
 4. **Connect to the App**: Steps to connect your application with the deployed React App.

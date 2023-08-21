@@ -1,0 +1,238 @@
+#pragma version 5
+// check if the app is being created
+// if so save creator
+int 0
+txn ApplicationID
+==
+bz not_creation
+byte "Creator"
+txn Sender
+app_global_put
+byte "start"
+global LatestTimestamp
+app_global_put
+int 1
+return
+not_creation:
+// check if this is deletion ---
+int DeleteApplication
+txn OnCompletion
+==
+bz not_deletion
+//check if deletor is creator
+byte "Creator"
+app_global_get
+txn Sender
+==
+bz failed
+int 1
+return
+not_deletion:
+// check if this is update
+int UpdateApplication
+txn OnCompletion
+==
+bz not_update
+byte "Creator"
+app_global_get
+txn Sender
+==
+bz failed
+int 1
+return
+not_update:
+//---
+// check for closeout
+int CloseOut
+txn OnCompletion
+==
+bnz close_out
+//addStuff
+txna ApplicationArgs 0
+byte "addStuff"
+==
+bnz addStuff
+txna ApplicationArgs 0
+byte "redeem"
+==
+bnz redeem
+txna ApplicationArgs 0
+byte "ban"
+==
+bnz ban
+txna ApplicationArgs 0
+byte "addasset"
+==
+bnz addasset
+txna ApplicationArgs 0
+byte "register"
+==
+bnz register
+txna ApplicationArgs 0
+byte "salvage"
+==
+bnz salvage
+salvage:
+byte "Creator"
+app_global_get
+txn Sender
+==
+bz failed
+itxn_begin
+int axfer
+itxn_field TypeEnum
+txn Sender
+itxn_field AssetReceiver
+//Asset ID must be in the assets array
+int 85004101
+itxn_field XferAsset
+txna ApplicationArgs 1
+btoi
+itxn_field AssetAmount
+itxn_submit
+int 1
+return
+addStuff:
+global LatestTimestamp
+byte "start"
+app_global_get
+//set to 86400 for 24 hours
+int 86400
++
+<=
+bz failed
+int 0 
+txn ApplicationID
+app_opted_in
+bz failed
+//check for max number transactions
+int 0
+byte "ready"
+app_local_get
+int 1
+==
+bnz failed
+global GroupSize
+int 2
+==
+bz failed
+//check that txn1 is to correct pool and is asa transfer
+gtxn 1 AssetReceiver
+global CurrentApplicationAddress
+==
+bz failed
+gtxn 1 XferAsset
+int 84518327
+==
+bz failed
+//update number of allow transactions
+int 0
+byte "ready"
+int 1
+app_local_put
+//add amount to local state
+int 0
+byte "vHDL"
+gtxn 1 AssetAmount
+app_local_put
+int 1
+return
+redeem:
+//prevent multiple redeems
+int 0
+byte "redeemed"
+app_local_get
+int 1
+==
+bnz failed
+//check that user not banned
+int 0
+byte "banned"
+app_local_get
+bnz failed
+//check that 6 months have elapsed since app creation
+global LatestTimestamp
+byte "start"
+app_global_get
+//set to 3024000 for 35 days or 15552000 for 6 months
+int 3024000
++
+>=
+bz failed
+//calculate payout
+int 0
+byte "vHDL"
+app_local_get
+store 0
+//check that payout > 0
+load 0
+int 0
+>
+bz failed
+itxn_begin
+int axfer
+itxn_field TypeEnum
+txn Sender
+itxn_field AssetReceiver
+//Asset ID must be in the assets array
+int 85004101
+itxn_field XferAsset
+load 0
+itxn_field AssetAmount
+itxn_submit
+int 0
+byte "redeemed"
+int 1
+app_local_put
+int 1
+return
+ban:
+//check if banner is creator
+byte "Creator"
+app_global_get
+txn Sender
+==
+bz failed
+int 1
+byte "banned"
+int 1
+app_local_put
+int 1
+return
+addasset:
+byte "Creator"
+app_global_get
+txn Sender
+==
+bz failed
+//opt in to asset
+itxn_begin
+int axfer
+itxn_field TypeEnum
+global CurrentApplicationAddress
+itxn_field AssetReceiver
+txn Assets 0
+itxn_field XferAsset
+// send 0
+int 0
+itxn_field AssetAmount
+itxn_submit
+int 1
+return
+//call if this is a closeout op
+register:
+int OptIn
+txn OnCompletion
+==
+bz failed
+int 1
+return
+close_out:
+int 1
+return
+failed:
+int 0
+return
+finished:
+int 1
+return

@@ -2,14 +2,14 @@ import React, { FC } from 'react'
 
 interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
     name: string;
-    label?: string | HTMLElement | JSX.Element;
+    label?: React.ReactNode;
     subLabel?: string;
     inputLabel?: any;
     className?: string;
     asterik?: boolean;
     id?: string;
     phone?: boolean;
-    SuffixComponent?: string | HTMLElement | JSX.Element;
+    SuffixComponent?: React.ReactNode;
     prefixComponent?: string | HTMLElement | JSX.Element;
 }
 
@@ -19,31 +19,31 @@ export const Input: FC<InputProps> = ({ name, label, subLabel, SuffixComponent, 
         <div className={`input-box ${className && className}`} >
             <div className="head-box">
                 <div className="label-box">
-                    {label && 
+                    {label &&
                         <div className={`text-primary label ${className && className}`} >
-                            {label} 
+                            {label}
                             <span className={asterik ? "asterik" : "hide"}> * </span>
                         </div>
                     }
-                    {subLabel && 
+                    {subLabel &&
                         <p className={`text-secondary sub-label ${className && className}`}>
                             {subLabel}
-                        </p> 
+                        </p>
                     }
                 </div>
             </div>
                {/* {phone && <p id="code">+123</p>} */}
 
             <div className={`input-cont ${className && className}`}>
-                <input 
-                    name={name} 
-                    {...rest} 
-                    className={`input ${className && className}`} 
+                <input
+                    name={name}
+                    {...rest}
+                    className={`input ${className && className}`}
                     id={id }
                 />
                 {SuffixComponent && <div className="suffix">{SuffixComponent}</div> }
             </div>
-                
+
         </div>
     );
 };
